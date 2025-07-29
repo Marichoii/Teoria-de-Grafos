@@ -19,6 +19,7 @@
     <div id="grafo"></div>
 
     <script type="text/javascript">
+        //Definindo os vértices
     const nodes = new vis.DataSet ([
         { id: 1, label: 'A'},
         { id: 2, label: 'B'},
@@ -26,6 +27,23 @@
         { id: 4, label: 'D'},
     ]);
 
+    // Definindo as arestas
+    const edges = new vis.DataSet([
+        { from: 1, to: 2 },
+        { from: 1, to: 3 },
+        { from: 2, to: 3 },
+        { from: 2, to: 4 },
+        { from: 3, to: 4 },
+        { from: 1, to: 1 }
+    ]);
+
+    // Criando o container e os dados
+    const container = document.getElementById('grafo');
+    const data = { nodes: nodes, edges: edges };
+    const options = {};
+
+    // Inicializando o grafo
+    const network = new vis.Network(container, data, options);
 </script>
 </body>
 </html>
